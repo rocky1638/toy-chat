@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: ./server
+  client:
+    build:
+      context: ./client
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - '3000:80'
